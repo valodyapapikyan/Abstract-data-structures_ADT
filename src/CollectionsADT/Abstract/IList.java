@@ -1,4 +1,4 @@
-package Abstract;
+package CollectionsADT.Abstract;
 
 public interface IList<T> {
 

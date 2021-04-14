@@ -1,4 +1,5 @@
-import ADT.ArrayList;
+import CollectionsADT.ArrayList;
+import CollectionsADT.LinkedList;
 
 public class Main {
 
@@ -7,9 +8,19 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<>();
 
 
-        for(int i = 0; i < 10; i++) {
-            list.insertFirst(i);
-        }
+//        for(int i = 0; i < 10; i++) {
+//            list.insertFirst(i);
+//        }
+
+        LinkedList<Integer> linkedList = new LinkedList<>();
+
+        linkedList.insertFirst(10);
+        linkedList.insertFirst(20);
+        linkedList.insertFirst(30);
+
+        System.out.println(  linkedList.size());
+
+
 
 //        list.insertAfter(4,100);
 //        list.insertBefore(6,200);
@@ -25,9 +36,9 @@ public class Main {
 
 
 
-        for(int a = 0; a < list.size(); a ++) {
-            System.out.println( list.element(a));
-        }
+//        for(int a = 0; a < list.size(); a ++) {
+//            System.out.println( list.element(a));
+//        }
 
 
 

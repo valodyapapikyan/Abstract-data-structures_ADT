@@ -1,6 +1,6 @@
-package ADT;
+package CollectionsADT;
 
-import Abstract.IList;
+import CollectionsADT.Abstract.IList;
 
 public class ArrayList<T> implements IList<T> {
 
@@ -11,60 +11,52 @@ public class ArrayList<T> implements IList<T> {
         array = (T[]) new Object[10];
     };
 
-    @Override
     public int size() {
         return size;
     };
 
-    @Override
     public boolean isEmpty() {
         return (size == 0);
     };
 
-    @Override
     public T first() {
         return array[0];
     };
 
-    @Override
     public T last() {
         return array[size-1];
     };
 
-    @Override
     public T prev(int p) {
         return array[p-1];
     }
 
-    @Override
     public T next(int p) {
         return array[p+1];
     }
 
-    @Override
     public T element(int p) {
         return array[p];
     }
 
-    @Override
     public boolean iFirst(T e) {
         return e == array[0];
     }
 
-    @Override
+
     public boolean isLast(T e) {
         return e == array[size -1];
 
     }
 
-    @Override
+
     public void replaceElement(int p, T q) {
         if(array.length > 0) {
             array[p] = q;
         }
     }
 
-    @Override
+
     public void swapElement(int p1, int p2) {
         T firstPosition =null;
         T secondPosition ;
@@ -83,7 +75,7 @@ public class ArrayList<T> implements IList<T> {
         }
     }
 
-    @Override
+
     public void insertBefore(int p, T e) {
 
         if( size == array.length ) {
@@ -100,7 +92,7 @@ public class ArrayList<T> implements IList<T> {
 
     }
 
-    @Override
+
     public void insertAfter(int p, T e) {
         if( size == array.length ) {
             resize();
@@ -115,7 +107,6 @@ public class ArrayList<T> implements IList<T> {
         array[p+1] = e;
     }
 
-    @Override
     public void insertFirst(T e) {
 
         size ++;
@@ -137,7 +128,7 @@ public class ArrayList<T> implements IList<T> {
 
     }
 
-    @Override
+
     public void insertLast(T e) {
 
         if( size == array.length ) {
@@ -155,7 +146,7 @@ public class ArrayList<T> implements IList<T> {
 
     }
 
-    @Override
+
     public void remove(int p) {
 
         array[p] = null;
@@ -168,7 +159,7 @@ public class ArrayList<T> implements IList<T> {
         size --;
     }
 
-    @Override
+
     public void removeFirst() {
 
         array[0] = null;
@@ -181,7 +172,7 @@ public class ArrayList<T> implements IList<T> {
 
     }
 
-    @Override
+
     public void removeLast() {
         array[array.length-1] = null;
         size --;
