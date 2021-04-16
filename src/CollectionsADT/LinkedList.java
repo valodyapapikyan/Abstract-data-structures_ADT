@@ -35,7 +35,7 @@ public class LinkedList<T> implements IList<T> {
 
 
     public boolean isEmpty() {
-        return false;
+        return (size == 0);
     }
 
 
@@ -45,13 +45,35 @@ public class LinkedList<T> implements IList<T> {
 
 
     public T last() {
-        return null;
+        Node  temp = head;
+
+        if (head == null) {
+            return null;
+        }
+
+       while (temp.next != null) {
+           temp = temp.next;
+       }
+
+       return temp.value;
     }
+
 
 
     public T prev(int p) {
-        return null;
-    }
+
+        Node current = head;
+
+        while (current.next != null){
+
+            if(current.value == p) {
+                current = current.next;
+                break;
+
+            }
+        }
+        return current.value;
+    };
 
 
     public T next(int p) {
