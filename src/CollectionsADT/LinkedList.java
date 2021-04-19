@@ -76,18 +76,19 @@ public class LinkedList<T> implements IList<T> {
 
 
     public T next(T p) {
+
         Node current = head;
 
         while (current.next != null){
 
             if(current.value == p) {
-                current = current.next;
-                break;
-
+                return current.next.value;
             }
+            current = current.next;
+
         }
 
-        return current.value;
+        return null;
     }
 
 

@@ -14,7 +14,7 @@ public class Main {
 
         LinkedList<Integer> linkedList = new LinkedList<>();
 
-        linkedList.insertFirst(10);
+        linkedList.insertFirst(10);     // 40 30 20 10
         linkedList.insertFirst(20);
         linkedList.insertFirst(30);
         linkedList.insertFirst(40);
@@ -22,7 +22,7 @@ public class Main {
 //        System.out.println(  linkedList.size());
 //        System.out.println(  linkedList.last());
 //        System.out.println(  linkedList.first());
-        System.out.println(  linkedList.prev(30));
+        System.out.println(  linkedList.next(30));
 
 
 
