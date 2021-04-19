@@ -35,7 +35,14 @@ public class LinkedList<T> implements IList<T> {
 
 
     public T first() {
+        Node _head = head;
+
+        if(_head != null){
+            return  _head.value;
+        }
+
         return null;
+
     }
 
 

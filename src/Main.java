@@ -18,11 +18,13 @@ public class Main {
         linkedList.insertFirst(20);
         linkedList.insertFirst(30);
         linkedList.insertFirst(40);
+        linkedList.insertFirst(70);
 
 //        System.out.println(  linkedList.size());
 //        System.out.println(  linkedList.last());
 //        System.out.println(  linkedList.first());
-        System.out.println(  linkedList.next(30));
+//        System.out.println(  linkedList.next(30));
+        System.out.println(  linkedList.first());
 
 
 
