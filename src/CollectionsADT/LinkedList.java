@@ -7,6 +7,10 @@ public class LinkedList<T> implements IList<T> {
     private Node head;
     private int size;
 
+    public LinkedList() {
+       head = null;
+       size = 0;
+    }
 
     public class Node {
 
@@ -21,16 +25,7 @@ public class LinkedList<T> implements IList<T> {
     }
 
     public int size() {
-
-        Node current = head;
-
-        while (current.next != null) {
-            current = current.next;
-            size = size + 1;
-        }
-
         return size;
-
     };
 
 
@@ -63,6 +58,25 @@ public class LinkedList<T> implements IList<T> {
     public T prev(T p) {
 
         Node current = head;
+        Node previous = null;
+
+        while (current != null){
+
+            if(current.value == p) {
+
+                return previous.value;
+            }
+
+            previous = current;
+            current = current.next;
+        }
+
+        return null;
+    };
+
+
+    public T next(T p) {
+        Node current = head;
 
         while (current.next != null){
 
@@ -74,11 +88,6 @@ public class LinkedList<T> implements IList<T> {
         }
 
         return current.value;
-    };
-
-
-    public T next(int p) {
-        return null;
     }
 
 
@@ -125,6 +134,7 @@ public class LinkedList<T> implements IList<T> {
         }
 
         Node nodeA = new Node(e, head);
+        head = nodeA;
         size  = size + 1;
 
     }

@@ -21,7 +21,8 @@ public class Main {
 
 //        System.out.println(  linkedList.size());
 //        System.out.println(  linkedList.last());
-        System.out.println(  linkedList.prev(20));
+//        System.out.println(  linkedList.first());
+        System.out.println(  linkedList.prev(30));
 
 
 

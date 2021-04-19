@@ -13,7 +13,7 @@ public interface IList<T> {
     public T first();
     public  T last();
     public  T prev(T p);
-    public  T next(int p);
+    public  T next(T p);
     public  T element(int p);
 
     //query methods
