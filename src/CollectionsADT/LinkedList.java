@@ -60,7 +60,7 @@ public class LinkedList<T> implements IList<T> {
 
 
 
-    public T prev(int p) {
+    public T prev(T p) {
 
         Node current = head;
 
@@ -72,6 +72,7 @@ public class LinkedList<T> implements IList<T> {
 
             }
         }
+
         return current.value;
     };
 
