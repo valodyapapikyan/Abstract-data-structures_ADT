@@ -100,6 +100,19 @@ public class LinkedList<T> implements IList<T> {
 
 
     public T element(int p) {
+        Node current = head;
+        int index = 0;
+
+        while (current.next != null) {
+
+           index ++;
+
+           if(index == p) {
+               return  current.value;
+           }
+
+           current = current.next;
+        }
         return null;
     }
 
