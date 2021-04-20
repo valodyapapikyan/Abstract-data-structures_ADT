@@ -21,7 +21,7 @@ public class Main {
         linkedList.insertFirst(55);
         linkedList.insertFirst(40);
 
-//         linkedList.replaceElement(0,555);
+         linkedList.swapElement(2,4);
 
         for (int x:linkedList) {
             System.out.println(x);

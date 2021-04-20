@@ -189,7 +189,29 @@ public class LinkedList<T> implements IList<T>, Iterable<T>{
 
 
     public void swapElement(int p1, int p2) {
+        Node current = head;
 
+        Node p1Node = null;
+        Node p2Node = null;
+        Node temp = null;
+
+        int  index = 0;
+
+        while (current != null) {
+
+            if(index == p1)
+                p1Node = current;
+
+            if(index == p2)
+                p2Node = current;
+
+            current = current.next;
+            index++;
+        }
+
+        temp = p1Node;
+        p1Node = p2Node;
+        p2Node = temp;
     }
 
 
