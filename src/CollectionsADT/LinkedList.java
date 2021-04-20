@@ -118,11 +118,27 @@ public class LinkedList<T> implements IList<T> {
 
 
     public boolean iFirst(T e) {
-        return false;
+
+       Node current = head;
+
+       if(current.value == e) {
+           return true;
+       }
+
+       return false;
     }
 
 
     public boolean isLast(T e) {
+        Node current = head;
+
+        while(current.value != e) {
+            if(current.next == null) {
+                return true;
+            }
+
+            current = current.next;
+        }
         return false;
     }
 
