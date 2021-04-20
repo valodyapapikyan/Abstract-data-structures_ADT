@@ -2,7 +2,9 @@ package CollectionsADT;
 
 import CollectionsADT.Abstract.IList;
 
-public class LinkedList<T> implements IList<T> {
+import java.util.Iterator;
+
+public class LinkedList<T> implements IList<T>, Iterable<T>{
 
     private Node head;
     private int size;
@@ -10,6 +12,30 @@ public class LinkedList<T> implements IList<T> {
     public LinkedList() {
        head = null;
        size = 0;
+    }
+
+    private class LinkedListIterator<T> implements Iterator<T> {
+
+        Node currentNode = head;
+
+        public boolean hasNext() {
+           return currentNode.next != null;
+        }
+
+
+        public T next() {
+            if(hasNext()) {
+                T value = (T) currentNode.value;
+                currentNode = currentNode.next;
+                return value;
+            }
+            return  null;
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new LinkedListIterator<>();
     }
 
     public class Node {
@@ -145,6 +171,20 @@ public class LinkedList<T> implements IList<T> {
 
     public void replaceElement(int p, T q) {
 
+        int index = 0;
+        Node current = head;
+
+        while(current.next != null) {
+
+
+            if(index == p) {
+                current.value = q;
+            }
+
+            current = current.next;
+            index ++;
+        }
+
     }
 
 
@@ -166,13 +206,13 @@ public class LinkedList<T> implements IList<T> {
     public void insertFirst(T e) {
         if (head == null) {
             head = new Node(e,null);
-            size  = size + 1;
+            size ++;
             return;
         }
 
         Node nodeA = new Node(e, head);
         head = nodeA;
-        size  = size + 1;
+        size ++;
 
     }
 
