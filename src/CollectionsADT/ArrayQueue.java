@@ -8,7 +8,7 @@ public class ArrayQueue<T> implements Queue<T>, Iterable<T> {
 
     private int size;
     private int first = 0;
-    private Object[] objects;
+    private final Object[] objects;
 
 
     public ArrayQueue(int capacity) {
