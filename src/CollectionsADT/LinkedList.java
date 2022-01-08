@@ -10,8 +10,8 @@ public class LinkedList<T> implements IList<T>, Iterable<T>{
     private int size;
 
     public LinkedList() {
-       head = null;
-       size = 0;
+       this.head = null;
+       this.size = 0;
     }
 
     private class LinkedListIterator<T> implements Iterator<T> {
@@ -216,7 +216,21 @@ public class LinkedList<T> implements IList<T>, Iterable<T>{
 
 
     public void insertBefore(int p, T e) {
+        Node current = head;
+        int index = 0;
 
+        while (current.next != null) {
+
+            if (index == p) {
+                Node n = new Node(e, current.next);
+
+                current.next = n;
+                return;
+            }
+
+            current = current.next;
+            index++;
+        }
     }
 
 
@@ -227,8 +241,8 @@ public class LinkedList<T> implements IList<T>, Iterable<T>{
 
     public void insertFirst(T e) {
         if (head == null) {
-            head = new Node(e,null);
-            size ++;
+            head = new Node(e, null);
+            size++;
             return;
         }
 
@@ -255,5 +269,30 @@ public class LinkedList<T> implements IList<T>, Iterable<T>{
 
     public void removeLast() {
 
+    }
+
+    public T elementAt(int index) {
+
+        if (isEmpty() || index > size) {
+            return null;
+        }
+
+        Node temp = head;
+
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+
+        return temp.value;
+    }
+
+    public void printAll() {
+        if (isEmpty()) {
+            System.out.println("List is empty");
+        } else {
+            for (int i = 0; i < size; i++)
+                System.out.println(elementAt(i));
+
+        }
     }
 }

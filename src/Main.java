@@ -12,22 +12,18 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<>();
 
 
-
         LinkedList<Integer> linkedList = new LinkedList<>();
 
         linkedList.insertFirst(88);
         linkedList.insertFirst(10);
         linkedList.insertFirst(20);
-        linkedList.insertFirst(30);
-        linkedList.insertFirst(55);
-        linkedList.insertFirst(40);
 
-         linkedList.swapElement(2,4);
 
-        for (int x:linkedList) {
+        linkedList.insertBefore(0, 50);
+        linkedList.printAll();
+        for (int x : linkedList) {
 //            System.out.println(x);
         }
-
 
 
         Sorting sorting = new Sorting();
@@ -52,7 +48,7 @@ public class Main {
         stack.push(4);
         stack.push(5);
         stack.pop();
-        stack.print();
+//        stack.print();
 
 //        stack.print();
 
