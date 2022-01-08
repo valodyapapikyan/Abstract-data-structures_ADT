@@ -1,3 +1,5 @@
+import Alghoritms.search.Search;
+import Alghoritms.sorting.Sorting;
 import CollectionsADT.ArrayList;
 import CollectionsADT.LinkedList;
 
@@ -8,9 +10,6 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<>();
 
 
-//        for(int i = 0; i < 10; i++) {
-//            list.insertFirst(i);
-//        }
 
         LinkedList<Integer> linkedList = new LinkedList<>();
 
@@ -24,30 +23,18 @@ public class Main {
          linkedList.swapElement(2,4);
 
         for (int x:linkedList) {
-            System.out.println(x);
+//            System.out.println(x);
         }
 
 
 
-//        list.insertAfter(4,100);
-//        list.insertBefore(6,200);
-//        list.replaceElement(2,9);
-//        list.swapElement(5,8);
-//        list.isEmpty();
-//        list.element(7);
-//        list.remove(3);
-//        list.next(5);
-//        list.insertFirst(500);
-//        ....
+        Sorting sorting = new Sorting();
+        Search search = new Search();
 
+        int [] array = {12,1,10,50,5,15,45,0,88,-96};
+        int [] ordered = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
 
-
-
-//        for(int a = 0; a < list.size(); a ++) {
-//            System.out.println( list.element(a));
-//        }
-
-
+        System.out.print( search.BinarySearchRecursion(ordered, 17, 0, ordered.length-1));
 
 
     }

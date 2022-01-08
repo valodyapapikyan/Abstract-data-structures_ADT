@@ -10,7 +10,7 @@ public interface IList<T> {
 
     //accessor methods
 
-    public T first();
+    public  T first();
     public  T last();
     public  T prev(T p);
     public  T next(T p);

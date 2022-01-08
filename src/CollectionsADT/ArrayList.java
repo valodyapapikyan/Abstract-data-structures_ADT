@@ -29,7 +29,6 @@ public class ArrayList<T> implements IList<T> {
 
     public T prev(T p) {
 
-
         for(int i = 0; i < array.length; i++) {
             if(array[i] == p) {
                 return array[i -1];
