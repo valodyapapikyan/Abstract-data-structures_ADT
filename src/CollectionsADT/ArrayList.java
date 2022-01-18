@@ -5,11 +5,20 @@ import CollectionsADT.Abstract.IList;
 public class ArrayList<T> implements IList<T> {
 
     private T[] array;
+    private final int defaultCapacity = 100;
     private int size = 0;
 
     public  ArrayList () {
-        array = (T[]) new Object[10];
+        array = (T[]) new Object[defaultCapacity];
     };
+
+    public ArrayList(int capacity) {
+        array = (T[]) new Object[capacity];
+    }
+
+    public void clear() {
+        size = 0;
+    }
 
     public int size() {
         return size;
@@ -41,6 +50,16 @@ public class ArrayList<T> implements IList<T> {
     public T next(T p) {
         for(int i = 0; i < array.length; i++) {
             if(array[i] == p) {
+                return array[i +1];
+            }
+        };
+
+        return null;
+    }
+
+    public T nextWithPosition(int p) {
+        for(int i = 0; i < array.length; i++) {
+            if(i == p) {
                 return array[i +1];
             }
         };
